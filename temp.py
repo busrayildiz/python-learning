@@ -15,8 +15,27 @@ import numpy as np
 #print(stdev)
 
 
+#//////////////////
+#data = np.loadtxt('test.csv', delimiter=',')
+#mean=np.mean (data , axis=0)
+#print(mean)
 
 
-data = np.loadtxt('test.csv', delimiter=',')
-mean=np.mean (data , axis=0)
-print(mean)
+#RESHAPE test
+#
+#a = np.random.randint(0,10,20)
+#print(a)
+#
+#b=np.reshape(a,(5,4))
+#print(b)
+ 
+
+#b = np.array([10,20,30,40,50])               
+#c=b[b>30]
+#print(c)
+
+
+#fill values with zero which are less than the mean 
+a = np.array([10,20,30,40,50])
+a[a < np.mean(a)] = 0
+print(a)
