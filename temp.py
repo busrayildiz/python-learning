@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from sklearn.preprocessing import LabelEncoder
 
 
 #import statistics
@@ -69,15 +70,69 @@ import pandas as pd
 # print(df)
 
 
-#GAUSS
-from scipy.stats import norm
-import numpy as np
-import matplotlib.pyplot as plt
+#GAUSS CURVE
+#from scipy.stats import norm
+#import numpy as np
+#import matplotlib.pyplot as plt
+#
+#x = np.linspace(-5 ,5 , 1000)
+#y = norm.pdf(x,0,1)
+#plt.plot(x,y)
 
 
-x = np.linspace(-5 ,5 , 1000)
-y = norm.pdf(x,0,1)
-plt.plot(x,y)
+#### Artificial Neural Networks
+
+#x = np.array([3, 5, 8, 9, 4])
+#w = np.array([3, 6, 1, 7, 8])
+
+#result = np.dot(x, w)
+#print(result)
+
+#result = np.sum(x * w)
+#print(result)
+
+
+
+#removing redundant columns from data tables
+#dataset = np.loadtxt('test.csv', delimiter=',', skiprows=1, dtype='object')
+#print(dataset)
+#
+#df = pd.read_csv('test.csv', usecols=[1,2])
+#print(df)
+
+
+
+#One Hot Encoding
+
+le = LabelEncoder()
+le.fit(['Kırmızı','Yeşil','Mavi'])
+data = le.transform(['Kırmızı','Yeşil','Mavi','Yeşil','Kırmızı'])
+print(data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
