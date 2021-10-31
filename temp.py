@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
+from tensorflow.keras.utils import to_categorical
+
 
 #import statistics
 #import math
@@ -104,11 +106,30 @@ from sklearn.preprocessing import LabelEncoder
 
 #One Hot Encoding
 
-le = LabelEncoder()
-le.fit(['Kırmızı','Yeşil','Mavi'])
-data = le.transform(['Kırmızı','Yeşil','Mavi','Yeşil','Kırmızı'])
-print(data)
+#le = LabelEncoder()
+#le.fit(['Kırmızı','Yeşil','Mavi'])
+#data = le.transform(['Kırmızı','Yeşil','Mavi','Yeşil','Kırmızı'])
+#print(data)
 
+
+
+
+#df = pd.read_csv('test.csv')
+#print(df)
+#le = LabelEncoder()
+#df['Renk'] = le.fit_transform(df['Renk'])
+#print(df)
+#dataset = df.to_numpy()
+#print(dataset)
+
+
+
+df = pd.read_csv('test.csv')
+le = LabelEncoder()
+df['Renk'] = le.fit_transform(df['Renk'])
+df[['Renk-0','Renk-1','Renk2']] = to_categorical(df['Renk'])
+df.drop(['Renk'], axis=1, inplace=True)
+print(df)
 
 
 
